@@ -1,30 +1,47 @@
 local M = {}
 
+-- TODO: backfill this to template
 M.setup = function()
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    -- disable virtual text
-    virtual_text = false,
-    -- show signs
-      signs = {
-        active = true,
-      },
-    update_in_insert = true,
-    underline = true,
-    severity_sort = true,
-  })
+	local signs = {
+		{ name = "DiagnosticSignError", text = "" },
+		{ name = "DiagnosticSignWarn", text = "" },
+		{ name = "DiagnosticSignHint", text = "" },
+		{ name = "DiagnosticSignInfo", text = "" },
+	}
 
-  vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })
-  vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn" })
-  vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo" })
-  vim.fn.sign_define("DiagnosticSignHint", { text = "", texthl = "DiagnosticSignHint" })
+	for _, sign in ipairs(signs) do
+		vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+	end
 
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
-  })
+	local config = {
+		-- disable virtual text
+		virtual_text = false,
+		-- show signs
+		signs = {
+			active = signs,
+		},
+		update_in_insert = true,
+		underline = true,
+		severity_sort = true,
+		float = {
+			focusable = false,
+			style = "minimal",
+			border = "rounded",
+			source = "always",
+			header = "",
+			prefix = "",
+		},
+	}
 
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
-  })
+	vim.diagnostic.config(config)
+
+	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+		border = "rounded",
+	})
+
+	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+		border = "rounded",
+	})
 end
 
 local function lsp_highlight_document(client)
@@ -68,10 +85,10 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
-  end
-  lsp_keymaps(bufnr)
+	if client.name == "tsserver" then
+		client.resolved_capabilities.document_formatting = false
+	end
+	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 end
 
