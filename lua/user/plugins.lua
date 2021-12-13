@@ -69,7 +69,6 @@ return packer.startup(function(use)
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
   use "lunarvim/vim-solidity"
-
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
