@@ -112,6 +112,7 @@ local mappings = {
 	["c"] = { "<cmd>Bdelete! %d<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["f"] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files" },
+	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 	["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Projects" },
 	["z"] = { "<cmd>ZenMode<cr>", "Zen" },
@@ -200,15 +201,20 @@ local mappings = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-		f = { "<cmd>Telescope find_files<cr>", "Find File" },
+		-- f = { "<cmd>Telescope find_files<cr>", "Find File" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		l = { "<cmd>Telescope resume<cr>", "Last Search" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
-		t = { "<cmd>Telescope live_grep<cr>", "Text" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
+	},
+
+	t = {
+		name = "Terminal",
+		h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
+		p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
 	},
 
 	T = {
