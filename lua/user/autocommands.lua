@@ -5,6 +5,7 @@ vim.cmd [[
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR> 
     autocmd TextYankPost * silent!lua require('vim.highlight').on_yank({higroup = 'Search', timeout = 200}) 
     autocmd CmdWinEnter * quit
+    autocmd BufWinEnter * :set formatoptions-=cro
   augroup end
 
   augroup _git
