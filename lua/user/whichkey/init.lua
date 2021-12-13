@@ -87,27 +87,31 @@ local m_opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
-
-	m_mappings = {
-		a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
-		c = { "<cmd>BookmarkClear<cr>", "Clear" },
-		m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
-		h = { "<cmd>lua require(\"harpoon.mark\").add_file()<cr>", "Harpoon" },
-		j = { "<cmd>BookmarkNext<cr>", "Next" },
-		k = { "<cmd>BookmarkPrev<cr>", "Prev" },
-		s = { "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>", "Show" },
-		x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
-		u = { "<cmd>lua require(\"harpoon.ui\").toggle_quick_menu()<cr>", "Harpoon UI" },
-	}
+local m_mappings = {
+	a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
+	c = { "<cmd>BookmarkClear<cr>", "Clear" },
+	m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
+	h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
+	j = { "<cmd>BookmarkNext<cr>", "Next" },
+	k = { "<cmd>BookmarkPrev<cr>", "Prev" },
+	s = {
+		"<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
+		"Show",
+	},
+	x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
+	u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
+}
 
 local mappings = {
+	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
+	["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["/"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
 	["c"] = { "<cmd>Bdelete! %d<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["f"] = { "<cmd>Telescope find_files<cr>", "Find files" },
+	["f"] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 	["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Projects" },
 	["z"] = { "<cmd>ZenMode<cr>", "Zen" },
@@ -191,7 +195,6 @@ local mappings = {
 			"Workspace Symbols",
 		},
 	},
-
 
 	s = {
 		name = "Search",
