@@ -211,6 +211,14 @@ local mappings = {
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
 
+	S = {
+		name = "Session",
+		s = { "<cmd>SaveSession<cr>", "Save" },
+		l = { "<cmd>LoadLastSession!<cr>", "Load Last" },
+		d = { "<cmd>LoadCurrentDirSession!<cr>", "Load Last Dir" },
+		f = { "<cmd>Telescope sessions save_current=false<cr>", "Find Session" },
+	},
+
 	t = {
 		name = "Terminal",
 		h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
