@@ -76,3 +76,22 @@ keymap("c", "<C-k>", 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true, nore
 keymap("n", "<leader>sf", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<leader>st", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<leader>sb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
+
+-- Custom
+keymap("n", "<esc><esc>", "<cmd>nohlsearch<cr>", opts)
+keymap("n", "<TAB>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+keymap("n", "Q", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<F1>", ":e ~/Notes/<cr>", opts)
+keymap("n", "<F3>", ":e .<cr>", opts)
+keymap("n", "<F4>", "<cmd>Telescope resume<cr>", opts)
+keymap("n", "<F5>", "<cmd>Telescope commands<CR>", opts)
+keymap("n", "<F6>", [[:echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<' . synIDattr(synID(line("."),col("."),0),"name") . "> lo<" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">" . " FG:" . synIDattr(synIDtrans(synID(line("."),col("."),1)),"fg#")<CR>]], opts)
+keymap("n", "<F7>", "<cmd>TSHighlightCapturesUnderCursor<cr>", opts)
+keymap("n", "<F8>", "<cmd>TSPlaygroundToggle<cr>", opts)
+keymap("n", "<F11>", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+keymap("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("v", "//", [[y/\V<C-R>=escape(@",'/\')<CR><CR>]], opts)
+-- vim.cmd[[nnoremap c* /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]
+-- vim.cmd[[nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]
+-- keymap("n", "c*", [[/\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]], opts)
+-- keymap("n", "c#", [[?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]], opts)

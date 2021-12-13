@@ -55,6 +55,24 @@ return packer.startup(function(use)
   use 'goolord/alpha-nvim'
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
+  use "unblevable/quick-scope"
+  use "phaazon/hop.nvim"
+  use "andymass/vim-matchup"
+  use "nacro90/numb.nvim"
+  use "monaqa/dial.nvim"
+  use "norcalli/nvim-colorizer.lua"
+  use "windwp/nvim-spectre"
+  use "folke/zen-mode.nvim"
+  use "karb94/neoscroll.nvim"
+  use "folke/todo-comments.nvim"
+  use "kevinhwang91/nvim-bqf"
+  use "ThePrimeagen/harpoon"
+  use "MattesGroeger/vim-bookmarks"
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+  }
 
 
   -- cmp plugins
@@ -74,9 +92,16 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "filipdutescu/renamer.nvim"
+  use "simrat39/symbols-outline.nvim"
+  use {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+  use 'tom-anders/telescope-vim-bookmarks.nvim'
 
   -- Treesitter
   use {
@@ -84,9 +109,16 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use "ChristianChiarulli/nvim-ts-rainbow"
+  use "nvim-treesitter/playground"
+  use "windwp/nvim-ts-autotag"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use "f-person/git-blame.nvim"
+  use "ruifm/gitlinker.nvim"
+  use "mattn/vim-gist"
+  use "mattn/webapi-vim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
