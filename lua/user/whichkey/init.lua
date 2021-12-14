@@ -104,14 +104,20 @@ local m_mappings = {
 
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["b"] = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers" },
+	["b"] = {
+		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"Buffers",
+	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
 	["/"] = { "<cmd>lua require('Comment').toggle()<CR>", "Comment" },
 	["c"] = { "<cmd>Bdelete! %d<CR>", "Close Buffer" },
 	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
-	["f"] = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files" },
+	["f"] = {
+		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"Find files",
+	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 	["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Projects" },
@@ -222,8 +228,17 @@ local mappings = {
 
 	t = {
 		name = "Terminal",
-		h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
-		p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
+		-- ["1"] = { ":1ToggleTerm<cr>", "1" },
+		-- ["2"] = { ":2ToggleTerm<cr>", "2" },
+		-- ["3"] = { ":3ToggleTerm<cr>", "3" },
+		-- ["4"] = { ":4ToggleTerm<cr>", "4" },
+		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
+		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
+		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
+		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
+		f = { "<cmd>ToggleTerm<cr>", "Float" },
+		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+		v = { "<cmd>ToggleTerm size=30 direction=vertical<cr>", "Vertical" },
 	},
 
 	T = {
