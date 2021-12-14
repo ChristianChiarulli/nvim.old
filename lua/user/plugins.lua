@@ -39,8 +39,6 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim' -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim"
   use 'kyazdani42/nvim-web-devicons'
@@ -76,6 +74,12 @@ return packer.startup(function(use)
     ft = "markdown",
   }
 
+  -- Colorschemes
+  use "folke/tokyonight.nvim"
+  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/darkplus.nvim"
+  use "catppuccin/nvim"
+  use "rose-pine/neovim"
 
   -- cmp plugins
   use 'hrsh7th/nvim-cmp' -- The completion plugin
@@ -84,6 +88,7 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline' -- cmdline completions
   use 'saadparwaiz1/cmp_luasnip' -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-emoji"
 
   -- snippets
   use 'L3MON4D3/LuaSnip' --snippet engine
@@ -104,6 +109,7 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use 'tom-anders/telescope-vim-bookmarks.nvim'
+  use 'nvim-telescope/telescope-media-files.nvim'
 
   -- Treesitter
   use {

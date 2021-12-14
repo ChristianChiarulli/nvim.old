@@ -203,6 +203,7 @@ local mappings = {
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		-- f = { "<cmd>Telescope find_files<cr>", "Find File" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+		i = { "<cmd>Telescope media_files<cr>", "Find Help" },
 		l = { "<cmd>Telescope resume<cr>", "Last Search" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
