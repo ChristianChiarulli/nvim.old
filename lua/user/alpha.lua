@@ -20,7 +20,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
 	dashboard.button("s", "  Find Session", ":Telescope sessions save_current=false <CR>"),
 	dashboard.button("c", "  Config", ":e ~/.config/nvim/init.lua <CR>"),
-	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+	dashboard.button("q", "  Quit", ":qa<CR>"),
 }
 
 local function footer()
