@@ -89,6 +89,8 @@ return packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip' -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
+  use "hrsh7th/cmp-nvim-lua"
+  -- use 'David-Kunz/cmp-npm' -- doesn't seem to work
 
   -- snippets
   use 'L3MON4D3/LuaSnip' --snippet engine
