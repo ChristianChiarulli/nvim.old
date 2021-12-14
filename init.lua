@@ -36,4 +36,5 @@ require("user.git-blame")
 require("user.gist")
 require("user.gitlinker")
 require("user.session-manager")
+require("user.surround")
 

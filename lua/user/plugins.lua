@@ -41,8 +41,8 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim"
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
+  use "kyazdani42/nvim-web-devicons"
+  use "kyazdani42/nvim-tree.lua"
   use 'akinsho/bufferline.nvim'
   use "moll/vim-bbye"
   use 'nvim-lualine/lualine.nvim'
@@ -67,6 +67,7 @@ return packer.startup(function(use)
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
   use "lunarvim/vim-solidity"
+  use "blackCauldron7/surround.nvim"
   use "Shatur/neovim-session-manager"
   use {
     "iamcco/markdown-preview.nvim",
@@ -108,6 +109,9 @@ return packer.startup(function(use)
     cmd = "TroubleToggle",
   }
 
+  -- Java
+  use "mfussenegger/nvim-jdtls"
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use 'tom-anders/telescope-vim-bookmarks.nvim'
@@ -129,6 +133,12 @@ return packer.startup(function(use)
   use "ruifm/gitlinker.nvim"
   use "mattn/vim-gist"
   use "mattn/webapi-vim"
+
+  -- DAP
+  use "mfussenegger/nvim-dap"
+  use "theHamsta/nvim-dap-virtual-text"
+  use "rcarriga/nvim-dap-ui"
+  use "Pocco81/DAPInstall.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
